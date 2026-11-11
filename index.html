@@ -1,1 +1,447 @@
-HTML/CSS card code block
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name – Web Developer</title>
+<meta name="description" content="Websites and web apps for small businesses and startups. Send a project brief and get a reply within one business day.">
+<meta property="og:title" content="Your Name – Web Developer">
+<meta property="og:description" content="Websites and web apps that turn visitors into clients.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F1F3EE;
+  --ink:#0F1A1F;
+  --muted:#4F5C58;
+  --line:#CBD1C8;
+  --cobalt:#2338F5;
+  --cobalt-deep:#1727B8;
+  --wash:#DDE2FF;
+  --white:#FBFCFA;
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --text:"Newsreader",Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--text);font-size:19px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* header */
+header.top{padding:22px 0}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:-.02em;text-decoration:none}
+nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-family:var(--display);font-weight:500;font-size:16px}
+nav a{text-decoration:none;padding:6px 0;border-bottom:2px solid transparent;transition:border-color .15s}
+nav a:hover{border-color:var(--cobalt)}
+
+/* hero */
+.hero{padding:48px 0 88px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:start}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(44px,6.4vw,88px);line-height:.98;letter-spacing:-.035em;margin:0 0 28px}
+.lede{font-size:clamp(20px,2vw,24px);line-height:1.5;max-width:30em;color:var(--muted);margin:0 0 36px}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn{display:inline-block;font-family:var(--display);font-weight:700;font-size:17px;padding:15px 26px;border-radius:999px;text-decoration:none;border:2px solid var(--ink);cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.btn-primary{background:var(--cobalt);border-color:var(--cobalt);color:#fff}
+.btn-primary:hover{background:var(--cobalt-deep);border-color:var(--cobalt-deep)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--paper)}
+.fine{margin-top:22px;font-size:16px;color:var(--muted)}
+.facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin:44px 0 0;padding:28px 0 0;border-top:1px solid var(--line);font-family:var(--display);font-size:16px;font-weight:500;list-style:none}
+.facts li span{display:block;font-weight:800;font-size:30px;letter-spacing:-.02em;line-height:1.1}
+
+/* form */
+.brief{background:var(--white);border:2px solid var(--ink);border-radius:20px;padding:32px;box-shadow:10px 10px 0 var(--cobalt)}
+.brief h2{font-family:var(--display);font-weight:800;font-size:28px;letter-spacing:-.02em;margin:0 0 4px}
+.brief .sub{margin:0 0 24px;color:var(--muted);font-size:17px}
+.field{margin-bottom:18px}
+label,.legend{display:block;font-family:var(--display);font-weight:700;font-size:15px;margin-bottom:6px}
+input[type=text],input[type=email],select,textarea{width:100%;font:inherit;font-size:18px;padding:12px 14px;border:2px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);transition:border-color .15s}
+input:hover,select:hover,textarea:hover{border-color:var(--muted)}
+input:focus,select:focus,textarea:focus{border-color:var(--cobalt);outline:none;box-shadow:0 0 0 3px var(--wash)}
+textarea{min-height:110px;resize:vertical}
+fieldset{border:0;padding:0;margin:0 0 18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips label{margin:0;font-weight:500;font-size:16px;padding:8px 16px;border:2px solid var(--line);border-radius:999px;cursor:pointer;background:#fff;transition:all .15s}
+.chips label:hover{border-color:var(--ink)}
+.chips input:checked+label{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.chips input:focus-visible+label{outline:3px solid var(--cobalt);outline-offset:2px}
+.hp{position:absolute;left:-9999px;height:0;overflow:hidden}
+.brief .btn{width:100%;text-align:center;font-size:18px}
+.brief .btn[disabled]{opacity:.6;cursor:wait}
+.err{color:#B3261E;font-family:var(--display);font-weight:500;font-size:14px;margin-top:6px;min-height:0}
+input[aria-invalid=true],select[aria-invalid=true],textarea[aria-invalid=true]{border-color:#B3261E}
+.status{margin-top:16px;font-family:var(--display);font-weight:500;font-size:16px}
+.status.ok{background:var(--wash);padding:14px 16px;border-radius:10px}
+.status.bad{color:#B3261E}
+.privacy{margin:14px 0 0;font-size:15px;color:var(--muted)}
+
+/* sections */
+section.block{padding:88px 0;border-top:1px solid var(--line)}
+h2.sec{font-family:var(--display);font-weight:800;font-size:clamp(34px,4.4vw,56px);letter-spacing:-.03em;line-height:1.04;margin:0 0 14px}
+.sec-intro{max-width:34em;color:var(--muted);margin:0 0 48px;font-size:21px}
+
+/* work */
+.work{display:grid;grid-template-columns:repeat(12,1fr);gap:28px}
+.proj{grid-column:span 6;display:flex;flex-direction:column}
+.proj.feature{grid-column:span 12;flex-direction:row;gap:36px;align-items:stretch}
+.proj.feature .panel{flex:1.3;aspect-ratio:auto;min-height:340px}
+.proj.feature .info{flex:1;display:flex;flex-direction:column;justify-content:center}
+.panel{aspect-ratio:16/10;border-radius:16px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:22px;color:#fff;margin-bottom:18px}
+.proj.feature .panel{margin-bottom:0}
+.panel b{font-family:var(--display);font-weight:800;font-size:clamp(48px,8vw,110px);line-height:.8;letter-spacing:-.05em;opacity:.95}
+.p0{background:var(--cobalt)}
+.p1{background:var(--ink)}
+.p2{background:#0E6B5C}
+.p3{background:#7A3E9D}
+.p4{background:#B6451F}
+.proj h3{font-family:var(--display);font-weight:800;font-size:28px;letter-spacing:-.02em;margin:0 0 4px}
+.kind{font-family:var(--display);font-weight:500;font-size:15px;color:var(--muted);margin:0 0 10px}
+.proj p.d{margin:0 0 12px}
+.result{font-family:var(--display);font-weight:700;font-size:16px;background:var(--wash);display:inline-block;padding:6px 12px;border-radius:8px;margin-bottom:14px;align-self:flex-start}
+.links{display:flex;gap:18px;font-family:var(--display);font-weight:700;font-size:16px}
+.links a{border-bottom:2px solid var(--cobalt);text-decoration:none;padding-bottom:1px}
+.links a:hover{background:var(--wash)}
+.note{margin-top:32px;font-size:16px;color:var(--muted)}
+
+/* services */
+.svc{border-top:2px solid var(--ink)}
+.svc-row{display:grid;grid-template-columns:1fr 1.6fr auto;gap:32px;align-items:baseline;padding:28px 0;border-bottom:1px solid var(--line)}
+.svc-row h3{font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:-.02em;margin:0}
+.svc-row p{margin:0}
+.price{font-family:var(--display);font-weight:700;font-size:18px;white-space:nowrap}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{counter-increment:s;border-top:2px solid var(--ink);padding-top:18px}
+.steps li::before{content:counter(s);font-family:var(--display);font-weight:800;font-size:44px;line-height:1;color:var(--cobalt);display:block;margin-bottom:10px}
+.steps h3{font-family:var(--display);font-weight:800;font-size:22px;margin:0 0 6px}
+.steps p{margin:0;font-size:17px;color:var(--muted)}
+
+/* closing */
+.closing{background:var(--ink);color:var(--paper);padding:96px 0;border-top:0}
+.closing h2{font-family:var(--display);font-weight:800;font-size:clamp(36px,5vw,68px);letter-spacing:-.035em;line-height:1;margin:0 0 28px;max-width:14em}
+.closing .btn-primary{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+.closing .btn-primary:hover{background:var(--wash);border-color:var(--wash)}
+footer{background:var(--ink);color:#AEB8B4;padding:0 0 40px;font-family:var(--display);font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;border-top:1px solid #2A383E;padding-top:24px}
+footer a{color:var(--paper)}
+
+/* responsive */
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;gap:48px}
+  .proj,.proj.feature{grid-column:span 12}
+  .proj.feature{flex-direction:column;gap:18px}
+  .proj.feature .panel{min-height:0;aspect-ratio:16/10}
+  .svc-row{grid-template-columns:1fr;gap:6px}
+  .steps{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  body{font-size:18px}
+  nav ul{gap:16px;font-size:15px}
+  .brief{padding:22px;box-shadow:6px 6px 0 var(--cobalt)}
+  .steps{grid-template-columns:1fr}
+  header.top .wrap{flex-direction:column;align-items:flex-start;gap:10px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" id="brandName">Your Name</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#brief">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Websites that bring you paying clients.</h1>
+        <p class="lede">I design and build fast, clear websites and web apps for small businesses and startups, and set them up so every visit has an easy way to get in touch.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#brief">Start a project</a>
+          <a class="btn btn-ghost" href="#work">See my work</a>
+        </div>
+        <p class="fine">Replies within one business day.</p>
+        <ul class="facts">
+          <li><span id="factYears">5+</span>years building for the web</li>
+          <li><span id="factProjects">30+</span>projects shipped</li>
+          <li><span>2 wks</span>typical first launch</li>
+        </ul>
+      </div>
+
+      <form class="brief" id="brief" novalidate aria-labelledby="briefTitle">
+        <h2 id="briefTitle">Tell me about your project</h2>
+        <p class="sub">Two minutes now saves a long call later.</p>
+
+        <div class="field">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" autocomplete="name" required>
+          <div class="err" id="err-name" aria-live="polite"></div>
+        </div>
+        <div class="field">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+          <div class="err" id="err-email" aria-live="polite"></div>
+        </div>
+        <div class="field">
+          <label for="type">What do you need?</label>
+          <select id="type" name="project_type" required>
+            <option value="">Choose one</option>
+            <option>New business website</option>
+            <option>Redesign of my current site</option>
+            <option>Web app or customer portal</option>
+            <option>Online store</option>
+            <option>Something else</option>
+          </select>
+          <div class="err" id="err-type" aria-live="polite"></div>
+        </div>
+        <fieldset>
+          <span class="legend" id="budgetLabel">Budget range</span>
+          <div class="chips" role="radiogroup" aria-labelledby="budgetLabel">
+            <input type="radio" id="b1" name="budget" value="Under $1,000"><label for="b1">Under $1,000</label>
+            <input type="radio" id="b2" name="budget" value="$1,000 – $3,000"><label for="b2">$1,000 – $3,000</label>
+            <input type="radio" id="b3" name="budget" value="$3,000 – $8,000"><label for="b3">$3,000 – $8,000</label>
+            <input type="radio" id="b4" name="budget" value="$8,000+"><label for="b4">$8,000+</label>
+            <input type="radio" id="b5" name="budget" value="Not sure yet"><label for="b5">Not sure yet</label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <label for="message">What should the site do for you?</label>
+          <textarea id="message" name="message" required></textarea>
+          <div class="err" id="err-message" aria-live="polite"></div>
+        </div>
+
+        <div class="hp" aria-hidden="true">
+          <label for="website">Leave this field empty</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <button class="btn btn-primary" type="submit" id="submitBtn">Send project brief</button>
+        <div class="status" id="status" role="status" aria-live="polite"></div>
+        <p class="privacy">I use your details only to reply to this enquiry.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="block" id="work">
+    <div class="wrap">
+      <h2 class="sec">Selected work</h2>
+      <p class="sec-intro">A few projects, what the client needed, and what changed after launch.</p>
+      <div class="work" id="workGrid"></div>
+      <noscript><p>Enable JavaScript to see the project list.</p></noscript>
+      <p class="note">These are sample entries. Replace them in the PROJECTS list inside this file with your own work.</p>
+    </div>
+  </section>
+
+  <section class="block" id="services">
+    <div class="wrap">
+      <h2 class="sec">What I do</h2>
+      <p class="sec-intro">Fixed scopes with clear prices, so you know the cost before we start.</p>
+      <div class="svc">
+        <div class="svc-row">
+          <h3>Business website</h3>
+          <p>A clear, fast site of up to 6 pages, a contact form that reaches you, basic search setup, and a short handover video.</p>
+          <span class="price">From $1,200</span>
+        </div>
+        <div class="svc-row">
+          <h3>Redesign and speed fix</h3>
+          <p>Keep what works, rebuild what doesn't. Cleaner layout, mobile fixes, and load times that don't lose visitors.</p>
+          <span class="price">From $900</span>
+        </div>
+        <div class="svc-row">
+          <h3>Web app</h3>
+          <p>Booking tools, dashboards and customer portals, built in stages so you can use the first version early.</p>
+          <span class="price">From $4,000</span>
+        </div>
+        <div class="svc-row">
+          <h3>Monthly care</h3>
+          <p>Hosting, updates, backups and small changes each month, so the site stays working while you run your business.</p>
+          <span class="price">From $60 / month</span>
+        </div>
+      </div>
+      <p class="note">Prices are examples. Edit them to match your own rates.</p>
+    </div>
+  </section>
+
+  <section class="block" id="process">
+    <div class="wrap">
+      <h2 class="sec">How a project runs</h2>
+      <p class="sec-intro">Four steps, with a check-in at each one.</p>
+      <ol class="steps">
+        <li><h3>Brief</h3><p>You send the form above. I reply with questions and a fixed quote within one business day.</p></li>
+        <li><h3>Design</h3><p>You see a working layout of the key pages before any heavy building starts.</p></li>
+        <li><h3>Build</h3><p>I build, you review a live preview link, and we fix things together.</p></li>
+        <li><h3>Launch</h3><p>I publish the site, test the contact form end to end, and hand over everything you own.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block closing" id="contact">
+    <div class="wrap">
+      <h2>Ready to get more enquiries from your website?</h2>
+      <a class="btn btn-primary" href="#brief">Send a project brief</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year"></span> <span id="footName">Your Name</span></span>
+    <span>
+      <a id="mailLink" href="#">Email</a> ·
+      <a id="ghLink" href="#" rel="noopener">GitHub</a> ·
+      <a id="liLink" href="#" rel="noopener">LinkedIn</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+/* ============ EDIT THIS BLOCK ============ */
+const CONFIG = {
+  name: "Your Name",
+  email: "you@example.com",
+  github: "https://github.com/your-username",
+  linkedin: "https://www.linkedin.com/in/your-username",
+  /* Paste your Formspree (or similar) endpoint here, e.g. "https://formspree.io/f/abcdwxyz".
+     Leave empty to fall back to opening the visitor's email app. */
+  formEndpoint: "",
+  years: "5+",
+  projectsShipped: "30+"
+};
+
+const PROJECTS = [
+  { title: "Sample: Dental clinic website", kind: "Business website", blurb: "A booking-focused site for a three-dentist clinic, built to replace a slow, outdated page.", result: "Sample result: online booking requests up after launch", live: "", code: "", feature: true },
+  { title: "Sample: Bakery online store", kind: "Online store", blurb: "Order-ahead store with pickup slots.", result: "Sample result: fewer phone orders", live: "", code: "" },
+  { title: "Sample: Logistics dashboard", kind: "Web app", blurb: "Live shipment tracking for a small delivery firm.", result: "Sample result: less time spent on status calls", live: "", code: "" }
+];
+/* ========================================= */
+
+(function(){
+  // fill identity
+  document.getElementById("brandName").textContent = CONFIG.name;
+  document.getElementById("footName").textContent = CONFIG.name;
+  document.getElementById("factYears").textContent = CONFIG.years;
+  document.getElementById("factProjects").textContent = CONFIG.projectsShipped;
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("mailLink").href = "mailto:" + CONFIG.email;
+  document.getElementById("ghLink").href = CONFIG.github;
+  document.getElementById("liLink").href = CONFIG.linkedin;
+  document.title = CONFIG.name + " – Web Developer";
+
+  // render projects
+  const grid = document.getElementById("workGrid");
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  PROJECTS.forEach((p, i) => {
+    const links = [];
+    if (p.live) links.push('<a href="' + esc(p.live) + '" rel="noopener">View live site</a>');
+    if (p.code) links.push('<a href="' + esc(p.code) + '" rel="noopener">View code</a>');
+    const initial = esc(p.title.replace(/^Sample:\s*/i, "").charAt(0));
+    const el = document.createElement("article");
+    el.className = "proj" + (p.feature ? " feature" : "");
+    el.innerHTML =
+      '<div class="panel p' + (i % 5) + '" aria-hidden="true"><b>' + initial + '</b></div>' +
+      '<div class="info">' +
+        '<h3>' + esc(p.title) + '</h3>' +
+        '<p class="kind">' + esc(p.kind) + '</p>' +
+        '<p class="d">' + esc(p.blurb) + '</p>' +
+        (p.result ? '<span class="result">' + esc(p.result) + '</span>' : '') +
+        (links.length ? '<div class="links">' + links.join("") + '</div>' : '') +
+      '</div>';
+    grid.appendChild(el);
+  });
+
+  // lead form
+  const form = document.getElementById("brief");
+  const statusEl = document.getElementById("status");
+  const btn = document.getElementById("submitBtn");
+  const rules = {
+    name:    { el: "name",    err: "err-name",    msg: "Enter your name." },
+    email:   { el: "email",   err: "err-email",   msg: "Enter a valid email address, like name@example.com." },
+    type:    { el: "type",    err: "err-type",    msg: "Choose what you need." },
+    message: { el: "message", err: "err-message", msg: "Tell me a little about what the site should do." }
+  };
+
+  function validate(){
+    let ok = true, first = null;
+    Object.values(rules).forEach(r => {
+      const input = document.getElementById(r.el);
+      const err = document.getElementById(r.err);
+      let valid = input.value.trim() !== "";
+      if (r.el === "email") valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim());
+      input.setAttribute("aria-invalid", valid ? "false" : "true");
+      err.textContent = valid ? "" : r.msg;
+      if (!valid){ ok = false; if (!first) first = input; }
+    });
+    if (first) first.focus();
+    return ok;
+  }
+
+  Object.values(rules).forEach(r => {
+    document.getElementById(r.el).addEventListener("input", () => {
+      document.getElementById(r.el).setAttribute("aria-invalid", "false");
+      document.getElementById(r.err).textContent = "";
+    });
+  });
+
+  form.addEventListener("submit", async function(e){
+    e.preventDefault();
+    statusEl.className = "status"; statusEl.textContent = "";
+    if (document.getElementById("website").value) return; // honeypot: bots only
+    if (!validate()) return;
+
+    const data = {
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      project_type: form.project_type.value,
+      budget: (form.querySelector('input[name="budget"]:checked') || {}).value || "Not given",
+      message: form.message.value.trim()
+    };
+
+    if (!CONFIG.formEndpoint){
+      const body = "Name: " + data.name + "\nEmail: " + data.email + "\nProject: " + data.project_type +
+                   "\nBudget: " + data.budget + "\n\n" + data.message;
+      window.location.href = "mailto:" + CONFIG.email + "?subject=" +
+        encodeURIComponent("Project brief from " + data.name) + "&body=" + encodeURIComponent(body);
+      statusEl.className = "status ok";
+      statusEl.textContent = "Opening your email app with the brief filled in. Press send there to finish.";
+      return;
+    }
+
+    btn.disabled = true; btn.textContent = "Sending…";
+    try {
+      const res = await fetch(CONFIG.formEndpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(data)
+      });
+      if (!res.ok) throw new Error("bad status " + res.status);
+      form.reset();
+      statusEl.className = "status ok";
+      statusEl.textContent = "Brief sent. I'll reply within one business day.";
+    } catch (err){
+      statusEl.className = "status bad";
+      statusEl.textContent = "The brief didn't send. Check your connection and try again, or email " + CONFIG.email + " directly.";
+    } finally {
+      btn.disabled = false; btn.textContent = "Send project brief";
+    }
+  });
+})();
+</script>
+</body>
+</html>
